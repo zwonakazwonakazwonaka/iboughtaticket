@@ -8,8 +8,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #ffffff; /* inverted background */
-      color: #0f0b1a;     /* text is now dark purple */
+      background: #ffffff; /* background */
+      color: #0f0b1a;     /* text color */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -29,7 +29,7 @@
       width: 90px;
       height: 90px;
       border-radius: 50%;
-      background-color: #2a243d; /* keeps the circle background dark */
+      background-color: #2a243d;
       margin: 0 auto 20px auto;
       overflow: hidden;
     }
@@ -59,15 +59,15 @@
       font-size: 15px;
       font-family: Arial, sans-serif;
       background-color: #0f0b1a; /* purple input background */
-      color: #ffffff;            /* white text inside input */
+      color: #ffffff;
     }
 
     button {
       margin-top: 12px;
       padding: 12px;
       width: 100%;
-      background: #0f0b1a;   /* purple button background */
-      color: #ffffff;        /* white text on button */
+      background: #0f0b1a;   /* purple button */
+      color: #ffffff;
       border: none;
       font-size: 15px;
       font-family: Arial, sans-serif;
@@ -92,6 +92,24 @@
 
     a {
       color: #0f0b1a;
+      text-decoration: none;
+    }
+
+    .ticket-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      background-color: #0f0b1a; /* purple button */
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .ticket-button:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -99,14 +117,17 @@
 
   <div class="container">
 
+    <!-- Buy a ticket button -->
+    <a class="ticket-button" href="https://www.tixr.com/groups/breakingsoundboston/events/breaking-sound-boston-02-03-168525?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnhWXMBdFvCXY3xz7MmDd0hPiEjx_rfFFBfowFkDsulFn_C2m8UWB8n23p2OQ_aem_5o-tsreuu2JgkYAQgXem-Q" target="_blank">Buy a Ticket</a>
+
     <!-- Circle avatar -->
     <div class="avatar">
       <img src="logo.png" alt="Artwork">
     </div>
 
     <h2>Zwonaka's Private Listener</h2>
-    <p>Enter password to listen
-        What is the four-letter word in the top right corner of your ticket? No caps
+    <p>Enter password to listen.<br>
+       What is the four-letter word in the top right corner of your ticket? No caps
     </p>
 
     <input type="password" id="password" placeholder="Password">
@@ -148,4 +169,3 @@
 
 </body>
 </html>
-
