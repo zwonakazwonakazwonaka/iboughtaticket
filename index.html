@@ -8,8 +8,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #0f0b1a;
-      color: #ffffff;
+      background: #ffffff; /* inverted background */
+      color: #0f0b1a;     /* text is now dark purple */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,12 +24,12 @@
       padding: 20px;
     }
 
-    /* Circle image placeholder */
+    /* Circle avatar */
     .avatar {
       width: 90px;
       height: 90px;
       border-radius: 50%;
-      background-color: #2a243d;
+      background-color: #2a243d; /* keeps the circle background dark */
       margin: 0 auto 20px auto;
       overflow: hidden;
     }
@@ -58,13 +58,16 @@
       border: none;
       font-size: 15px;
       font-family: Arial, sans-serif;
+      background-color: #0f0b1a; /* purple input background */
+      color: #ffffff;            /* white text inside input */
     }
 
     button {
       margin-top: 12px;
       padding: 12px;
       width: 100%;
-      background: #ffffff;
+      background: #0f0b1a;   /* purple button background */
+      color: #ffffff;        /* white text on button */
       border: none;
       font-size: 15px;
       font-family: Arial, sans-serif;
@@ -86,13 +89,17 @@
       display: none;
       margin-top: 25px;
     }
+
+    a {
+      color: #0f0b1a;
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
 
-    <!-- Circle image -->
+    <!-- Circle avatar -->
     <div class="avatar">
       <img src="logo.png" alt="Artwork">
     </div>
@@ -110,9 +117,9 @@
       <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2255968784%3Fsecret_token%3Ds-dLH18Qcf2FR&color=%2383dbf1&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
       </iframe>
-      <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Arial, sans-serif; font-weight: 100;">
-        <a href="https://soundcloud.com/zwonaka-s-music" title="Zwonaka" target="_blank" style="color: #cccccc; text-decoration: none;">Zwonaka</a> ·
-        <a href="https://soundcloud.com/zwonaka-s-music/secrettracksecrettracksecrettrack/s-dLH18Qcf2FR" title="secrettracksecrettracksecrettrack" target="_blank" style="color: #cccccc; text-decoration: none;">secrettracksecrettracksecrettrack</a>
+      <div style="font-size: 10px; color: #0f0b1a; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Arial, sans-serif; font-weight: 100;">
+        <a href="https://soundcloud.com/zwonaka-s-music" title="Zwonaka" target="_blank" style="color: #0f0b1a; text-decoration: none;">Zwonaka</a> ·
+        <a href="https://soundcloud.com/zwonaka-s-music/secrettracksecrettracksecrettrack/s-dLH18Qcf2FR" title="secrettracksecrettracksecrettrack" target="_blank" style="color: #0f0b1a; text-decoration: none;">secrettracksecrettracksecrettrack</a>
       </div>
     </div>
 
@@ -129,6 +136,8 @@
       if (input === correctPassword) {
         player.style.display = "block";
         error.style.display = "none";
+        document.getElementById("password").style.display = "none";
+        document.querySelector("button").style.display = "none";
       } else {
         error.style.display = "block";
       }
