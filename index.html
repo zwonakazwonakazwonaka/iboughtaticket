@@ -149,22 +149,24 @@
   </div>
 
   <script>
-    const correctPassword = "tixr";
+  
+  const correctPassword = "tixr";
 
-    function checkPassword() {
-      const input = document.getElementById("password").value;
-      const error = document.getElementById("error");
-      const player = document.getElementById("player");
+  function checkPassword() {
+    const input = document.getElementById("password").value.toLowerCase(); // convert input to lowercase
+    const error = document.getElementById("error");
+    const player = document.getElementById("player");
 
-      if (input === correctPassword) {
-        player.style.display = "block";
-        error.style.display = "none";
-        document.getElementById("password").style.display = "none";
-        document.querySelector("button").style.display = "none";
-      } else {
-        error.style.display = "block";
-      }
+    if (input === correctPassword) {
+      player.style.display = "block";
+      error.style.display = "none";
+      document.getElementById("password").style.display = "none";
+      document.querySelector("button").style.display = "none";
+    } else {
+      error.style.display = "block";
     }
+  }
+
   </script>
 
 </body>
