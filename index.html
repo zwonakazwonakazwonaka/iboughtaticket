@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Private Listening</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0b1a;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* Circle image placeholder */
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: #2a243d;
+      margin: 0 auto 20px auto;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    input {
+      padding: 12px;
+      width: 100%;
+      margin-top: 16px;
+      border-radius: 4px;
+      border: none;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 12px;
+      width: 100%;
+      background: #ffffff;
+      border: none;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .error {
+      color: #ff6b6b;
+      margin-top: 12px;
+      display: none;
+      font-size: 13px;
+    }
+
+    .player {
+      display: none;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Circle image -->
+    <div class="avatar">
+      <!-- <img src="your-image.jpg" alt="Artwork"> -->
+    </div>
+
+    <h2>Private Listening</h2>
+    <p>Enter password to listen</p>
+
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkPassword()">Unlock</button>
+
+    <p class="error" id="error">Incorrect password</p>
+
+    <div class="player" id="player">
+      <!-- SoundCloud Embed -->
+      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2255968784%3Fsecret_token%3Ds-dLH18Qcf2FR&color=%2383dbf1&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+      </iframe>
+      <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Arial, sans-serif; font-weight: 100;">
+        <a href="https://soundcloud.com/zwonaka-s-music" title="Zwonaka" target="_blank" style="color: #cccccc; text-decoration: none;">Zwonaka</a> ·
+        <a href="https://soundcloud.com/zwonaka-s-music/secrettracksecrettracksecrettrack/s-dLH18Qcf2FR" title="secrettracksecrettracksecrettrack" target="_blank" style="color: #cccccc; text-decoration: none;">secrettracksecrettracksecrettrack</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const correctPassword = "kendricklamar";
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const error = document.getElementById("error");
+      const player = document.getElementById("player");
+
+      if (input === correctPassword) {
+        player.style.display = "block";
+        error.style.display = "none";
+      } else {
+        error.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
